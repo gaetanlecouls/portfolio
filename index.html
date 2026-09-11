@@ -45,6 +45,7 @@
             margin: 25px 0;
             text-align: center;
             transition: opacity 0.2s;
+            cursor: pointer;
         }
 
         .sidebar-nav a:hover {
@@ -107,7 +108,7 @@
 
         /* Bloc de présentation gris arrondi */
         .bio-box {
-            background-color: #dce3ed; /* Gris bleuté clair */
+            background-color: #dce3ed;
             border: 2px solid #b0c2de;
             border-radius: 20px;
             padding: 30px 40px;
@@ -116,8 +117,7 @@
             color: #1a1a1a;
             max-width: 900px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            margin-bottom: 50px; /* Espacement avant les projets */
-            text-align: justify; /* Texte justifié */
+            text-align: justify;
         }
 
         /* --- SECTION PROJETS --- */
@@ -126,6 +126,7 @@
             font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 30px;
+            /* MODIFICATION : Ajout d'une marge importante pour décaler vers le bas */
             margin-top: 80px;
         }
 
@@ -232,35 +233,42 @@
     </style>
 </head>
 <body>
+    
+    <!-- Ancre invisible au tout début du site pour le retour en haut -->
+    <div id="top"></div>
 
+    <!-- Barre latérale fixe -->
     <sidebar>
         <nav class="sidebar-nav">
-            <a href="#profil">Profil</a>
+            <!-- MODIFICATION : Le lien pointe maintenant vers '#top' (le haut de la page) -->
+            <a href="#top">Profil</a>
             <a href="#projets">Projets et Réalisations</a>
             <a href="#formation">Formation</a>
         </nav>
     </sidebar>
 
+    <!-- Contenu principal -->
     <main class="main-content">
+        <!-- Bannière image de mer -->
         <div class="hero-banner">
             <a href="#contact" class="contact-btn">Contact</a>
         </div>
 
+        <!-- Corps de la page -->
         <div class="content-body">
             
-            <!-- --- BLOC DE PRESENTATION (RE-INSCRIT ICI) --- -->
-            <div id="profil">
-                <h1 class="main-name">GAETAN LE COULS</h1>
-                <h2 class="main-title">Etudiant Ingénieur | Calcul Fluide-Structure</h2>
+            <!-- Bloc de présentation -->
+            <h1 class="main-name">GAETAN LE COULS</h1>
+            <h2 class="main-title">Etudiant Ingénieur | Calcul Fluide-Structure</h2>
 
-                <div class="bio-box">
-                    Passionné par la voile et l'univers maritime, je suis actuellement étudiant ingénieur en troisième année à SeaTech Toulon, spécialisé en Modélisation et Calcul Fluide-Structure. Curieux, rigoureux et impliqué, je souhaite aujourd'hui mobiliser mes compétences scientifiques et techniques pour relever les défis de l'industrie navale et participer au développement des solutions maritimes de demain.
-                </div>
+            <div class="bio-box">
+                Passionné par la voile et l'univers maritime, je suis actuellement étudiant ingénieur en troisième année à SeaTech Toulon, spécialisé en Modélisation et Calcul Fluide-Structure. Curieux, rigoureux et impliqué, je souhaite aujourd'hui mobiliser mes compétences scientifiques et techniques pour relever les défis de l'industrie navale et participer au développement des solutions maritimes de demain.
             </div>
-            <!-- --- FIN DU BLOC DE PRESENTATION --- -->
 
+            <!-- MODIFICATION : Le titre de section a maintenant une marge supérieure (margin-top: 80px) définie dans le CSS ci-dessus -->
             <h1 class="section-title" id="projets">Projets et Réalisations</h1>
 
+            <!-- 1. PREMIER BLOC ACCORDEON (OUVERT PAR DEFAUT) -->
             <details class="accordion-item" open>
                 <summary>Etude des performances d’un brise-lames flottant - Essais en bassin</summary>
                 <div class="accordion-content project-block">
