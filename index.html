@@ -126,7 +126,6 @@
             font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 30px;
-            /* MODIFICATION : Ajout d'une marge importante pour décaler vers le bas */
             margin-top: 120px;
         }
 
@@ -157,6 +156,7 @@
             display: none;
         }
 
+        /* Flèche personnalisée */
         .accordion-item summary::after {
             content: "↓";
             font-size: 1.2rem;
@@ -202,7 +202,8 @@
         }
 
         .flex-row img {
-            max-width: 350px;
+            /* MODIFICATION : Taille réduite de 350px à 280px pour compacter */
+            max-width: 280px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
@@ -240,7 +241,6 @@
     <!-- Barre latérale fixe -->
     <sidebar>
         <nav class="sidebar-nav">
-            <!-- MODIFICATION : Le lien pointe maintenant vers '#top' (le haut de la page) -->
             <a href="#top">Profil</a>
             <a href="#projets">Projets et Réalisations</a>
             <a href="#formation">Formation</a>
@@ -265,7 +265,7 @@
                 Passionné par la voile et l'univers maritime, je suis actuellement étudiant ingénieur en troisième année à SeaTech Toulon, spécialisé en Modélisation et Calcul Fluide-Structure. Curieux, rigoureux et impliqué, je souhaite aujourd'hui mobiliser mes compétences scientifiques et techniques pour relever les défis de l'industrie navale et participer au développement des solutions maritimes de demain.
             </div>
 
-            <!-- MODIFICATION : Le titre de section a maintenant une marge supérieure (margin-top: 80px) définie dans le CSS ci-dessus -->
+            <!-- Section Projets et Réalisations -->
             <h1 class="section-title" id="projets">Projets et Réalisations</h1>
 
             <!-- 1. PREMIER BLOC ACCORDEON (OUVERT PAR DEFAUT) -->
