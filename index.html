@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaetan Le Couls - Étudiant Ingénieur</title>
+    <style>
+        /* Réinitialisation de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* --- BARRE LATERALE FIXE --- */
+        sidebar {
+            width: 280px;
+            background-color: #0b346e; /* Bleu foncé Wix */
+            color: white;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: block;
+            margin: 25px 0;
+            text-align: center;
+            transition: opacity 0.2s;
+        }
+
+        .sidebar-nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* --- CONTENU PRINCIPAL A DROITE --- */
+        .main-content {
+            flex-grow: 1;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Bannière image de mer */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            background-image: url('votre-image-mer.jpg'); /* Remplacez par le nom de votre image de mer */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Bouton Contact en haut à droite de la bannière */
+        .contact-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background-color: #0055ff;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.2s;
+        }
+
+        .contact-btn:hover {
+            background-color: #0040cc;
+        }
+
+        /* Section informations et texte */
+        .content-body {
+            padding: 40px 60px;
+        }
+
+        h1 {
+            color: #0b346e;
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: #666666;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        /* Bloc de présentation gris arrondi */
+        .bio-box {
+            background-color: #dce3ed; /* Gris bleuté clair */
+            border: 2px solid #b0c2de;
+            border-radius: 20px;
+            padding: 30px 40px;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #1a1a1a;
+            max-width: 900px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Pour tester le scroll (à enlever quand vous aurez ajouté tout votre contenu) */
+        .spacer {
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre latérale fixe -->
+    <sidebar>
+        <nav class="sidebar-nav">
+            <a href="#profil">Profil</a>
+            <a href="#projets">Projets et Réalisations</a>
+            <a href="#formation">Formation</a>
+        </nav>
+    </sidebar>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <!-- Bannière image de mer -->
+        <div class="hero-banner">
+            <a href="#contact" class="contact-btn">Contact</a>
+        </div>
+
+        <!-- Corps de la page -->
+        <div class="content-body" id="profil">
+            <h1>GAETAN LE COULS</h1>
+            <h2>Etudiant Ingénieur | Calcul Fluide-Structure</h2>
+
+            <div class="bio-box">
+                Passionné par la voile et l'univers maritime, je suis actuellement étudiant ingénieur en troisième année à SeaTech Toulon, spécialisé en Modélisation et Calcul Fluide-Structure. Curieux, rigoureux et impliqué, je souhaite aujourd'hui mobiliser mes compétences scientifiques et techniques pour relever les défis de l'industrie navale et participer au développement des solutions maritimes de demain.
+            </div>
+        </div>
+
+        <!-- Espace de test pour voir le comportement du scroll de la barre latérale -->
+        <div class="spacer"></div>
+    </main>
+
+</body>
+</html>
