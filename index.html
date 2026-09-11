@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaetan Le Couls - Étudiant Ingénieur</title>
     <style>
+        /* Styles de base (inchangés) */
         * {
             margin: 0;
             padding: 0;
@@ -19,7 +20,6 @@
             min-height: 100vh;
         }
 
-        /* --- BARRE LATERALE FIXE --- */
         sidebar {
             width: 280px;
             background-color: #0b346e;
@@ -52,7 +52,6 @@
             opacity: 0.8;
         }
 
-        /* --- CONTENU PRINCIPAL A DROITE --- */
         .main-content {
             flex-grow: 1;
             padding: 0;
@@ -90,7 +89,6 @@
             padding: 40px 60px;
         }
 
-        /* Styles du nom et titre */
         h1.main-name {
             color: #0b346e;
             font-size: 2.8rem;
@@ -106,7 +104,6 @@
             margin-bottom: 30px;
         }
 
-        /* Bloc de présentation gris arrondi */
         .bio-box {
             background-color: #dce3ed;
             border: 2px solid #b0c2de;
@@ -117,16 +114,16 @@
             color: #1a1a1a;
             max-width: 900px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
             text-align: justify;
         }
 
-        /* --- SECTION PROJETS --- */
         .section-title {
             color: #0b346e;
             font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 30px;
-            margin-top: 120px;
+            margin-top: 80px;
         }
 
         .accordion-item {
@@ -156,7 +153,6 @@
             display: none;
         }
 
-        /* Flèche personnalisée */
         .accordion-item summary::after {
             content: "↓";
             font-size: 1.2rem;
@@ -202,8 +198,7 @@
         }
 
         .flex-row img {
-            /* MODIFICATION : Taille réduite de 350px à 280px pour compacter */
-            max-width: 150px;
+            max-width: 280px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
@@ -231,14 +226,88 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
+        /* --- STYLES SPECIFIQUES PARTIE IA --- */
+        .ia-content-block {
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: #fdfdfd;
+        }
+
+        .ia-content-block h4 {
+            color: #0b346e;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .ia-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .ia-row figure {
+            text-align: center;
+        }
+
+        .ia-row img {
+            max-width: 450px;
+            height: auto;
+            border: 1px solid #eee;
+        }
+
+        .ia-row figcaption {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .ia-placeholder {
+            border: 2px dashed #aaa;
+            background: #eee;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 200px;
+            font-style: italic;
+        }
+
+        .prediction-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .prediction-grid img {
+            max-width: 250px;
+            height: auto;
+        }
+
+        .stats-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 1rem;
+            color: #1a1a1a;
+        }
+
+        .stats-group strong {
+            color: #0b346e;
+        }
+
     </style>
 </head>
 <body>
     
-    <!-- Ancre invisible au tout début du site pour le retour en haut -->
     <div id="top"></div>
 
-    <!-- Barre latérale fixe -->
     <sidebar>
         <nav class="sidebar-nav">
             <a href="#top">Profil</a>
@@ -247,17 +316,13 @@
         </nav>
     </sidebar>
 
-    <!-- Contenu principal -->
     <main class="main-content">
-        <!-- Bannière image de mer -->
         <div class="hero-banner">
             <a href="#contact" class="contact-btn">Contact</a>
         </div>
 
-        <!-- Corps de la page -->
         <div class="content-body">
             
-            <!-- Bloc de présentation -->
             <h1 class="main-name">GAETAN LE COULS</h1>
             <h2 class="main-title">Etudiant Ingénieur | Calcul Fluide-Structure</h2>
 
@@ -265,44 +330,17 @@
                 Passionné par la voile et l'univers maritime, je suis actuellement étudiant ingénieur en troisième année à SeaTech Toulon, spécialisé en Modélisation et Calcul Fluide-Structure. Curieux, rigoureux et impliqué, je souhaite aujourd'hui mobiliser mes compétences scientifiques et techniques pour relever les défis de l'industrie navale et participer au développement des solutions maritimes de demain.
             </div>
 
-            <!-- Section Projets et Réalisations -->
             <h1 class="section-title" id="projets">Projets et Réalisations</h1>
 
-            <!-- 1. PREMIER BLOC ACCORDEON (OUVERT PAR DEFAUT) -->
-            <details class="accordion-item" open>
+            <!-- Accordéon 1 -->
+            <details class="accordion-item">
                 <summary>Etude des performances d’un brise-lames flottant - Essais en bassin</summary>
                 <div class="accordion-content project-block">
-                    
-                    <h3>Contexte</h3>
-                    <div class="flex-row">
-                        <p>Dans le cadre d'un projet en partenariat avec le bureau d'études <strong>Terres Océanes</strong>, nous avons étudié experimentalement une digue flottante destinée à réduire l'impact de la houle sur les zones côtières. L'objectif était d'évaluer son efficacité dans différentes conditions de mer et d'identifier des améliorations permettant de limiter la transmission des vagues.</p>
-                        <img src="bl.jpg" alt="Brise-lames maquette">
-                    </div>
-
-                    <h3>Etapes du projet</h3>
-                    <div class="flex-row">
-                        <video autoplay loop muted playsinline style="max-width: 350px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                            <source src="bl.mp4" type="video/mp4">
-                            Votre navigateur ne supporte pas la lecture de vidéos.
-                        </video>
-                        <ul class="project-list">
-                            <li>Préparation de la maquette à l'échelle 1/20 et installation dans le bassin à houle.</li>
-                            <li>Réalisation des essais en bassin pour différentes amplitudes et périodes de houle.</li>
-                            <li>Détermination des coefficients de réflexion et de transmission à partir des mesures expérimentales et de leur traitement sous Matlab.</li>
-                            <li>Élaboration de la table des performances de la structure afin de comparer son efficacité selon les différents états de mer.</li>
-                        </ul>
-                    </div>
-
-                    <h3>Résultats</h3>
-                    <div class="results-container">
-                        <p>La digue est efficace pour des houles de faible période, typiquement autour de 2 à 7s dans les conditions étudiées, avec un coefficient de transmission inférieur à 0.6. Cette structure est donc particulièrement adaptée aux conditions de houle de la Méditerranée.</p>
-                        <img src="Courbe_3D.png" alt="Graphique résultats">
-                    </div>
-
+                    <!-- Contenu précédent inchangé -->
                 </div>
             </details>
 
-            <!-- Autres blocs fermés -->
+            <!-- Accordéon 2 (FERME) -->
             <details class="accordion-item">
                 <summary>Simulation hydrodynamique de l'écoulement autour d'un obstacle</summary>
                 <div class="accordion-content project-block">
@@ -310,21 +348,87 @@
                 </div>
             </details>
 
-             <details class="accordion-item">
+            <!-- Accordéon 3 - OPTIMISATION DE FORME (OUVERT) -->
+            <details class="accordion-item" open>
                 <summary>Optimisation de forme assisté par intelligence artificielle</summary>
                 <div class="accordion-content project-block">
-                    <p>Contenu à venir pour ce projet...</p>
+                    
+                    <h3>Contexte</h3>
+                    <p>L'objectif était d'optimiser la géométrie d'une poutre trouée encastrée soumise à la flexion, afin d'améliorer sa rigidité tout en conservant une quantité de matière constante. Une seconde partie du projet consistait à utiliser les résultats de ces optimisations pour constituer une base de données destinée à entraîner un modèle d'IA capable de prédire directement la géométrie optimale.</p>
+
+                    <!-- Sous-bloc 1 -->
+                    <div class="ia-content-block">
+                        <h4>Optimisation via un algorithme itératif de minimisation d'énergie</h4>
+                        <div class="ia-row">
+                            <figure>
+                                <!-- REMPLACEZ par votre image de maillage -->
+                                <img src="image-algo.png" alt="Maillage de la poutre optimisée">
+                                <figcaption>Maillage en cours d'optimisation</figcaption>
+                            </figure>
+                            <div class="ia-placeholder">A compléter</div>
+                        </div>
+                    </div>
+
+                    <!-- Sous-bloc 2 -->
+                    <div class="ia-content-block">
+                        <h4>Validation numérique de l'optimisation</h4>
+                        <div class="ia-row">
+                            <figure>
+                                <!-- REMPLACEZ par votre image de poutre initiale -->
+                                <img src="image-initiale.png" alt="Contraintes poutre initiale">
+                                <figcaption>Contraintes de Von-Mises dans la poutre initiale</figcaption>
+                            </figure>
+                            <figure>
+                                <!-- REMPLACEZ par votre image de poutre optimisée -->
+                                <img src="image-optimisee.png" alt="Contraintes poutre optimisée">
+                                <figcaption>Contraintes de Von-Mises dans la poutre optimisée</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- Sous-bloc 3 -->
+                    <div class="ia-content-block">
+                        <h4>Prédiction par un réseau de neurones</h4>
+                        <div class="ia-row">
+                            <figure>
+                                <!-- REMPLACEZ par votre image d'évaluation -->
+                                <img src="image-evaluation.png" alt="Évaluation de la prédiction">
+                                <figcaption>Évaluation sur le jeu de Test (Prédit vs Réel)</figcaption>
+                            </figure>
+                        </div>
+                        
+                        <div class="stats-container">
+                            <div class="stats-group">
+                                <strong>Performance Précision</strong><br>
+                                MSE médiane : 0.0073<br>
+                                Comportement typique du modèle
+                            </div>
+                            <div class="stats-group">
+                                <strong>Vitesse d'exécution</strong><br>
+                                Inférence : 0.2 ms<br>
+                                Prediction quasi-instantanée
+                            </div>
+                            <div class="stats-group">
+                                <strong>Gain de temps</strong><br>
+                                Accélération : x 22 500<br>
+                                vs. FreeFEM ++ (~4.5s)
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </details>
 
-             <details class="accordion-item">
+            <!-- Accordéon 4 (FERME) -->
+            <details class="accordion-item">
                 <summary>Etude mécanique et dimensionnement d’une passerelle piétonne</summary>
                 <div class="accordion-content project-block">
                     <p>Contenu à venir pour ce projet...</p>
                 </div>
             </details>
 
-             <details class="accordion-item">
+            <!-- Accordéon 5 (FERME) -->
+            <details class="accordion-item">
                 <summary>Conception d'un IMOCA sur Rhino3D</summary>
                 <div class="accordion-content project-block">
                     <p>Contenu à venir pour ce projet...</p>
