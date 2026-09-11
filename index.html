@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaetan Le Couls - Étudiant Ingénieur</title>
     <style>
-        /* Réinitialisation de base */
         * {
             margin: 0;
             padding: 0;
@@ -23,7 +22,7 @@
         /* --- BARRE LATERALE FIXE --- */
         sidebar {
             width: 280px;
-            background-color: #0b346e; /* Bleu foncé Wix */
+            background-color: #0b346e;
             color: white;
             height: 100vh;
             position: sticky;
@@ -59,17 +58,15 @@
             overflow-x: hidden;
         }
 
-        /* Bannière image de mer */
         .hero-banner {
             position: relative;
             width: 100%;
             height: 350px;
-            background-image: url('arré.png'); /* Remplacez par le nom de votre image de mer */
+            background-image: url('votre-image-mer.jpg');
             background-size: cover;
             background-position: center;
         }
 
-        /* Bouton Contact en haut à droite de la bannière */
         .contact-btn {
             position: absolute;
             top: 20px;
@@ -88,7 +85,6 @@
             background-color: #0040cc;
         }
 
-        /* Section informations et texte */
         .content-body {
             padding: 40px 60px;
         }
@@ -101,29 +97,122 @@
             margin-bottom: 5px;
         }
 
-        h2 {
+        h2.subtitle {
             color: #666666;
             font-size: 1.4rem;
             font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        /* --- SECTION PROJETS & ACCORDEONS --- */
+        .section-title {
+            color: #0b346e;
+            font-size: 2.2rem;
+            font-weight: 800;
             margin-bottom: 30px;
         }
 
-        /* Bloc de présentation gris arrondi */
-        .bio-box {
-            background-color: #dce3ed; /* Gris bleuté clair */
-            border: 2px solid #b0c2de;
-            border-radius: 20px;
-            padding: 30px 40px;
-            font-size: 1.15rem;
-            line-height: 1.6;
-            color: #1a1a1a;
-            max-width: 900px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        .accordion-item {
+            background-color: #f7f9fc;
+            border: 2px solid #d0daf0;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            overflow: hidden;
         }
 
-        /* Pour tester le scroll (à enlever quand vous aurez ajouté tout votre contenu) */
-        .spacer {
-            height: 800px;
+        .accordion-item summary {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #0b346e;
+            padding: 20px 30px;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #edf2f8;
+            transition: background-color 0.2s;
+        }
+
+        .accordion-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Flèche personnalisée */
+        .accordion-item summary::after {
+            content: "↓";
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .accordion-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-item summary:hover {
+            background-color: #e2ebf5;
+        }
+
+        .accordion-content {
+            padding: 30px;
+            background-color: #ffffff;
+        }
+
+        /* Mise en page interne du projet */
+        .project-block h3 {
+            color: #0b346e;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .project-block h3:first-child {
+            margin-top: 0;
+        }
+
+        .project-block p {
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .flex-row {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .flex-row img {
+            max-width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .project-list {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .project-list li {
+            margin-bottom: 10px;
+        }
+
+        .results-container {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .results-container img {
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -146,17 +235,78 @@
         </div>
 
         <!-- Corps de la page -->
-        <div class="content-body" id="profil">
-            <h1>GAETAN LE COULS</h1>
-            <h2>Etudiant Ingénieur | Calcul Fluide-Structure</h2>
+        <div class="content-body">
+            
+            <!-- Section Projets et Réalisations -->
+            <h1 class="section-title" id="projets">Projets et Réalisations</h1>
 
-            <div class="bio-box">
-                Passionné par la voile et l'univers maritime, je suis actuellement étudiant ingénieur en troisième année à SeaTech Toulon, spécialisé en Modélisation et Calcul Fluide-Structure. Curieux, rigoureux et impliqué, je souhaite aujourd'hui mobiliser mes compétences scientifiques et techniques pour relever les défis de l'industrie navale et participer au développement des solutions maritimes de demain.
-            </div>
+            <!-- 1. PREMIER BLOC (OUVERT PAR DEFAUT) -->
+            <details class="accordion-item" open>
+                <summary>Etude des performances d’un brise-lames flottant - Essais en bassin</summary>
+                <div class="accordion-content project-block">
+                    
+                    <h3>Contexte</h3>
+                    <div class="flex-row">
+                        <p>Dans le cadre d'un projet en partenariat avec le bureau d'études <strong>Terres Océanes</strong>, nous avons étudié experimentalement une digue flottante destinée à réduire l'impact de la houle sur les zones côtières. L'objectif était d'évaluer son efficacité dans différentes conditions de mer et d'identifier des améliorations permettant de limiter la transmission des vagues.</p>
+                        <img src="votre-image-brise-lames.jpg" alt="Brise-lames maquette">
+                    </div>
+
+                    <h3>Etapes du projet</h3>
+                    <div class="flex-row">
+                        <video autoplay loop muted playsinline style="max-width: 350px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <source src="votre-video-brise-lames.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la lecture de vidéos.
+                        </video>
+                        <ul class="project-list">
+                            <li>Préparation de la maquette à l'échelle 1/20 et installation dans le bassin à houle.</li>
+                            <li>Réalisation des essais en bassin pour différentes amplitudes et périodes de houle.</li>
+                            <li>Détermination des coefficients de réflexion et de transmission à partir des mesures expérimentales et de leur traitement sous Matlab.</li>
+                            <li>Élaboration de la table des performances de la structure afin de comparer son efficacité selon les différents états de mer.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Résultats</h3>
+                    <div class="results-container">
+                        <p>La digue est efficace pour des houles de faible période, typiquement autour de 2 à 7s dans les conditions étudiées, avec un coefficient de transmission inférieur à 0.6. Cette structure est donc particulièrement adaptée aux conditions de houle de la Méditerranée.</p>
+                        <img src="votre-image-graphique.jpg" alt="Graphique résultats">
+                    </div>
+
+                </div>
+            </details>
+
+            <!-- 2. DEUXIEME BLOC (FERME) -->
+            <details class="accordion-item">
+                <summary>Simulation hydrodynamique de l'écoulement autour d'un obstacle</summary>
+                <div class="accordion-content project-block">
+                    <p>Contenu à venir pour ce projet...</p>
+                </div>
+            </details>
+
+            <!-- 3. TROISIEME BLOC (FERME) -->
+            <details class="accordion-item">
+                <summary>Optimisation de forme assisté par intelligence artificielle</summary>
+                <div class="accordion-content project-block">
+                    <p>Contenu à venir pour ce projet...</p>
+                </div>
+            </details>
+
+            <!-- 4. QUATRIEME BLOC (FERME) -->
+            <details class="accordion-item">
+                <summary>Etude mécanique et dimensionnement d’une passerelle piétonne</summary>
+                <div class="accordion-content project-block">
+                    <p>Contenu à venir pour ce projet...</p>
+                </div>
+            </details>
+
+            <!-- 5. CINQUIEME BLOC (FERME) -->
+            <details class="accordion-item">
+                <summary>Conception d'un IMOCA sur Rhino3D</summary>
+                <div class="accordion-content project-block">
+                    <p>Contenu à venir pour ce projet...</p>
+                </div>
+            </details>
+
         </div>
-
-        <!-- Espace de test pour voir le comportement du scroll de la barre latérale -->
-        <div class="spacer"></div>
     </main>
 
 </body>
