@@ -89,7 +89,8 @@
             padding: 40px 60px;
         }
 
-        h1 {
+        /* Styles du nom et titre */
+        h1.main-name {
             color: #0b346e;
             font-size: 2.8rem;
             font-weight: 900;
@@ -97,14 +98,29 @@
             margin-bottom: 5px;
         }
 
-        h2.subtitle {
+        h2.main-title {
             color: #666666;
             font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
-        /* --- SECTION PROJETS & ACCORDEONS --- */
+        /* Bloc de présentation gris arrondi */
+        .bio-box {
+            background-color: #dce3ed; /* Gris bleuté clair */
+            border: 2px solid #b0c2de;
+            border-radius: 20px;
+            padding: 30px 40px;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #1a1a1a;
+            max-width: 900px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 50px; /* Espacement avant les projets */
+            text-align: justify; /* Texte justifié */
+        }
+
+        /* --- SECTION PROJETS --- */
         .section-title {
             color: #0b346e;
             font-size: 2.2rem;
@@ -139,7 +155,6 @@
             display: none;
         }
 
-        /* Flèche personnalisée */
         .accordion-item summary::after {
             content: "↓";
             font-size: 1.2rem;
@@ -159,7 +174,6 @@
             background-color: #ffffff;
         }
 
-        /* Mise en page interne du projet */
         .project-block h3 {
             color: #0b346e;
             font-size: 1.3rem;
@@ -218,7 +232,6 @@
 </head>
 <body>
 
-    <!-- Barre latérale fixe -->
     <sidebar>
         <nav class="sidebar-nav">
             <a href="#profil">Profil</a>
@@ -227,20 +240,26 @@
         </nav>
     </sidebar>
 
-    <!-- Contenu principal -->
     <main class="main-content">
-        <!-- Bannière image de mer -->
         <div class="hero-banner">
             <a href="#contact" class="contact-btn">Contact</a>
         </div>
 
-        <!-- Corps de la page -->
         <div class="content-body">
             
-            <!-- Section Projets et Réalisations -->
+            <!-- --- BLOC DE PRESENTATION (RE-INSCRIT ICI) --- -->
+            <div id="profil">
+                <h1 class="main-name">GAETAN LE COULS</h1>
+                <h2 class="main-title">Etudiant Ingénieur | Calcul Fluide-Structure</h2>
+
+                <div class="bio-box">
+                    Passionné par la voile et l'univers maritime, je suis actuellement étudiant ingénieur en troisième année à SeaTech Toulon, spécialisé en Modélisation et Calcul Fluide-Structure. Curieux, rigoureux et impliqué, je souhaite aujourd'hui mobiliser mes compétences scientifiques et techniques pour relever les défis de l'industrie navale et participer au développement des solutions maritimes de demain.
+                </div>
+            </div>
+            <!-- --- FIN DU BLOC DE PRESENTATION --- -->
+
             <h1 class="section-title" id="projets">Projets et Réalisations</h1>
 
-            <!-- 1. PREMIER BLOC (OUVERT PAR DEFAUT) -->
             <details class="accordion-item" open>
                 <summary>Etude des performances d’un brise-lames flottant - Essais en bassin</summary>
                 <div class="accordion-content project-block">
@@ -274,7 +293,7 @@
                 </div>
             </details>
 
-            <!-- 2. DEUXIEME BLOC (FERME) -->
+            <!-- Autres blocs fermés -->
             <details class="accordion-item">
                 <summary>Simulation hydrodynamique de l'écoulement autour d'un obstacle</summary>
                 <div class="accordion-content project-block">
@@ -282,24 +301,21 @@
                 </div>
             </details>
 
-            <!-- 3. TROISIEME BLOC (FERME) -->
-            <details class="accordion-item">
+             <details class="accordion-item">
                 <summary>Optimisation de forme assisté par intelligence artificielle</summary>
                 <div class="accordion-content project-block">
                     <p>Contenu à venir pour ce projet...</p>
                 </div>
             </details>
 
-            <!-- 4. QUATRIEME BLOC (FERME) -->
-            <details class="accordion-item">
+             <details class="accordion-item">
                 <summary>Etude mécanique et dimensionnement d’une passerelle piétonne</summary>
                 <div class="accordion-content project-block">
                     <p>Contenu à venir pour ce projet...</p>
                 </div>
             </details>
 
-            <!-- 5. CINQUIEME BLOC (FERME) -->
-            <details class="accordion-item">
+             <details class="accordion-item">
                 <summary>Conception d'un IMOCA sur Rhino3D</summary>
                 <div class="accordion-content project-block">
                     <p>Contenu à venir pour ce projet...</p>
