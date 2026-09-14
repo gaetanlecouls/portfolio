@@ -284,6 +284,73 @@
             height: auto;
         }
 
+        /* --- STYLES CARROUSEL IMOCA (Carré + Flèches) --- */
+        .imoca-carousel-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .carousel-box {
+            position: relative;
+            width: 450px;
+            height: 450px; /* Format carré */
+            background-color: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Remplit le carré harmonieusement */
+            display: none;
+        }
+
+        .carousel-box img.active {
+            display: block;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(11, 52, 110, 0.7);
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background-color: rgba(11, 52, 110, 1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 600;
+        }
+
     </style>
 </head>
 <body>
@@ -355,7 +422,7 @@
             </details>
 
             <!-- Accordéon 3 - OPTIMISATION DE FORME (OUVERT) -->
-            <details class="accordion-item" open>
+            <details class="accordion-item">
                 <summary>Optimisation de forme assisté par intelligence artificielle</summary>
                 <div class="accordion-content project-block">
                     
@@ -414,16 +481,59 @@
                 </div>
             </details>
 
-            <!-- Accordéon 5 (FERME) -->
-            <details class="accordion-item">
+            <!-- Accordéon 5 - CONCEPTION D'UN IMOCA -->
+            <details class="accordion-item" open>
                 <summary>Conception d'un IMOCA sur Rhino3D</summary>
                 <div class="accordion-content project-block">
-                    <p>Contenu à venir pour ce projet...</p>
+                    <h3>Passion et Modélisation 3D</h3>
+                    <p>Passionné par la voile et notamment par la course au large, j'ai profité de mon temps libre pour concevoir un modèle complet d'IMOCA sur Rhino3D. Ce projet personnel m'a permis de me familiariser en profondeur avec le logiciel, à la fois sur la partie conception géométrique (surfaçage, lignes de coque, appendices) et sur la partie rendu visuel.</p>
+                    
+                    <!-- Carrousel d'images IMOCA en format carré avec flèches -->
+                    <div class="imoca-carousel-container">
+                        <div class="carousel-box" id="imocaCarousel">
+                            <button class="carousel-btn carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
+                            <img src="imo1.jpg" alt="IMOCA Modélisation 1" class="active">
+                            <img src="imo2.jpg" alt="IMOCA Modélisation 2">
+                            <img src="imo3.jpg" alt="IMOCA Modélisation 3">
+                            <img src="imo4.jpg" alt="IMOCA Modélisation 4">
+                            <img src="imo5.jpg" alt="IMOCA Modélisation 5">
+                            <img src="imo6.jpg" alt="IMOCA Modélisation 6">
+                            <img src="imo7.jpg" alt="IMOCA Modélisation 7">
+                            <button class="carousel-btn carousel-next" onclick="moveSlide(1)">&#10095;</button>
+                        </div>
+                        <div class="carousel-indicators" id="carouselCounter">Image 1 / 7</div>
+                    </div>
                 </div>
             </details>
 
         </div>
     </main>
 
+    <!-- Script JavaScript pour le carrousel en boucle -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#imocaCarousel img');
+        const counter = document.getElementById('carouselCounter');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            // Gestion du bouclage infini
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            slides[currentSlide].classList.add('active');
+            counter.textContent = `Image ${currentSlide + 1} / ${slides.length}`;
+        }
+
+        function moveSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+    </script>
 </body>
 </html>
