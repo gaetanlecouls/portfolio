@@ -259,8 +259,8 @@
         .side-item img, 
         .side-item video {
             width: 100%;
-            height: 180px; /* Fixe la même hauteur pour les deux */
-            object-fit: cover; /* Remplit le cadre harmonieusement (ou utilisez contain si vous voulez voir toute l'image/vidéo sans rognage) */
+            height: 180px;
+            object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
@@ -378,6 +378,64 @@
             font-weight: 600;
         }
 
+        /* --- STYLES SPECIFIQUES FORMATION (Modèle type modèle fourni) --- */
+        .formation-card {
+            background-color: #ffffff;
+            border: 1px solid #d0daf0;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            position: relative;
+        }
+
+        .formation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .formation-title-group h3 {
+            color: #0b346e;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .formation-location {
+            color: #555;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .formation-diploma {
+            color: #222;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        .formation-dates {
+            color: #666;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: right;
+        }
+
+        .formation-list {
+            margin-left: 20px;
+            margin-top: 15px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .formation-list li {
+            margin-bottom: 8px;
+        }
+
     </style>
 </head>
 <body>
@@ -440,23 +498,20 @@
                 </div>
             </details>
 
-            <!-- Accordéon 2 : Simulation hydrodynamique (Mis à jour) -->
+            <!-- Accordéon 2 : Simulation hydrodynamique -->
             <details class="accordion-item">
                 <summary>Simulation hydrodynamique de l'écoulement autour d'un obstacle</summary>
                 <div class="accordion-content project-block">
                     
-                    <!-- Texte d'introduction -->
                     <p>
                         Cette étude s'intéresse à l'analyse de l'écoulement hydrodynamique au sein d'un canal à houle équipé d'un haut-fond. L'objectif est d'observer les perturbations générées par la topographie sous-marine sur la propagation des ondes et sur la structure du champ de vitesse.
                     </p>
 
-                    <!-- Image en dessous du texte -->
                     <div class="hydro-center-img">
                         <img src="euler.png" alt="Canal à houle avec haut-fond">
                         <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Visualisation du dispositif expérimental / numérique du canal à houle</p>
                     </div>
 
-                    <!-- Élément côte à côte : Image et Vidéo -->
                     <div class="side-by-side-container">
                         <div class="side-item">
                             <img src="airy.png" alt="Écoulement autour de l'obstacle">
@@ -471,7 +526,6 @@
                         </div>
                     </div>
 
-                    <!-- Texte explicatif final -->
                     <p>
                         L'analyse détaillée met en évidence l'apparition de tourbillons (ou structures de recirculation) formés en aval de l'obstacle. Ce phénomène de décollement de la couche limite est induit par les variations brutales de la bathymétrie, provoquant des pertes de charge locales et une redistribution importante de l'énergie cinétique dans le fluide.
                     </p>
@@ -479,7 +533,7 @@
                 </div>
             </details>
 
-            <!-- Accordéon 3 - OPTIMISATION DE FORME (OUVERT) -->
+            <!-- Accordéon 3 - OPTIMISATION DE FORME -->
             <details class="accordion-item">
                 <summary>Optimisation de forme assisté par intelligence artificielle</summary>
                 <div class="accordion-content project-block">
@@ -528,7 +582,7 @@
                 </div>
             </details>
 
-            <!-- Accordéon 4 (FERME) -->
+            <!-- Accordéon 4 -->
             <details class="accordion-item">
                 <summary>Etude mécanique et dimensionnement d’une passerelle piétonne</summary>
                 <div class="accordion-content project-block">
@@ -537,7 +591,7 @@
             </details>
 
             <!-- Accordéon 5 - CONCEPTION D'UN IMOCA -->
-            <details class="accordion-item" open>
+            <details class="accordion-item">
                 <summary>Conception d'un IMOCA sur Rhino3D</summary>
                 <div class="accordion-content project-block">
                     <h3>Passion et Modélisation 3D</h3>
@@ -559,6 +613,39 @@
                     </div>
                 </div>
             </details>
+
+            <!-- NOUVELLE SECTION FORMATION -->
+            <h1 class="section-title" id="formation">Formation</h1>
+
+            <div class="formation-card">
+                <div class="formation-header">
+                    <div class="formation-title-group">
+                        <div class="formation-location">SEATECH — TOULON, FRANCE</div>
+                        <div class="formation-diploma">École d'ingénieurs[cite: 1]</div>
+                    </div>
+                    <div class="formation-dates">2024 - Présent</div>
+                </div>
+                <p><strong>Parcours :</strong> Modélisation et Calcul Fluide-Structure[cite: 1]</p>
+                <p><strong>Électifs :</strong> Architecture navale | Ondes marines[cite: 1]</p>
+                <ul class="formation-list">
+                    <li>Acquisition de compétences avancées en mécanique des fluides numérique (CFD) et résistance des matériaux.</li>
+                    <li>Réalisation de projets appliqués à l'industrie maritime et côtière (analyse de brise-lames, simulations hydrodynamiques).</li>
+                </ul>
+            </div>
+
+            <div class="formation-card">
+                <div class="formation-header">
+                    <div class="formation-title-group">
+                        <div class="formation-location">LA PRÉPA DES INP — BORDEAUX, FRANCE</div>
+                        <div class="formation-diploma">Classe Préparatoire Intégrée[cite: 1]</div>
+                    </div>
+                    <div class="formation-dates">2022 - 2024</div>
+                </div>
+                <ul class="formation-list">
+                    <li>Cycle préparatoire scientifique pluridisciplinaire menant aux écoles d'ingénieurs du réseau Groupe INP.</li>
+                    <li>Consolidation des bases fondamentales en mathématiques, physique et sciences de l'ingénieur.</li>
+                </ul>
+            </div>
 
         </div>
     </main>
