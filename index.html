@@ -266,16 +266,10 @@
             margin-top: 5px;
         }
 
-        .ia-placeholder {
-            border: 2px dashed #aaa;
-            background: #eee;
-            color: #555;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 300px;
-            height: 200px;
-            font-style: italic;
+        /* Style agrandi pour l'image de la partie 2 */
+        .large-img {
+            max-width: 600px !important;
+            width: 100%;
         }
 
         .prediction-grid {
@@ -288,18 +282,6 @@
         .prediction-grid img {
             max-width: 250px;
             height: auto;
-        }
-
-        .stats-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            font-size: 1rem;
-            color: #1a1a1a;
-        }
-
-        .stats-group strong {
-            color: #0b346e;
         }
 
     </style>
@@ -380,62 +362,44 @@
                     <h3>Contexte</h3>
                     <p>L'objectif était d'optimiser la géométrie d'une poutre trouée encastrée soumise à la flexion, afin d'améliorer sa rigidité tout en conservant une quantité de matière constante. Une seconde partie du projet consistait à utiliser les résultats de ces optimisations pour constituer une base de données destinée à entraîner un modèle d'IA capable de prédire directement la géométrie optimale.</p>
 
-                    <!-- Sous-bloc 1 -->
+                    <!-- Sous-bloc 1 : Remplacement du placeholder par l'explication -->
                     <div class="ia-content-block">
                         <h4>Optimisation via un algorithme itératif de minimisation d'énergie</h4>
                         <div class="ia-row">
                             <figure>
-                                <!-- Intégration de la vidéo pour la partie algo -->
                                 <video autoplay loop muted playsinline style="max-width: 350px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                                     <source src="opti.mp4" type="video/mp4">
                                     Votre navigateur ne supporte pas la lecture de vidéos.
                                 </video>
                             </figure>
-                            <div class="ia-placeholder">A compléter</div>
+                            <div style="max-width: 450px; text-align: justify; font-size: 0.95rem; line-height: 1.5; color: #333;">
+                                <p>Cette étape consiste à optimiser la résistance mécanique sous contrainte de volume (en conservant la même quantité de matière) à l'aide d'un multiplicateur de Lagrange. L'algorithme redistribue la matière de manière optimale pour réduire les zones de fortes contraintes.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Sous-bloc 2 -->
+                    <!-- Sous-bloc 2 : Image grossie et ajout de l'explication de validation -->
                     <div class="ia-content-block">
                         <h4>Validation numérique de l'optimisation</h4>
-                        <div class="ia-row">
+                        <div class="ia-row" style="flex-direction: column; text-align: center;">
                             <figure>
-                                <!-- REMPLACEZ par votre image de poutre initiale -->
-                            <figure>
-                                <!-- REMPLACEZ par votre image de poutre optimisée -->
-                                <img src="poutre.png" alt="Contraintes poutre optimisée">
+                                <img src="poutre.png" alt="Contraintes poutre optimisée" class="large-img">
                                 <figcaption>Contraintes de Von-Mises dans la poutre optimisée</figcaption>
                             </figure>
+                            <p style="margin-top: 15px; max-width: 700px; text-align: justify; line-height: 1.5;">
+                                La validation numérique confirme une meilleure résistance de la structure optimisée, avec notamment une flèche diminuée de 40% par rapport à la poutre initiale.
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Sous-bloc 3 -->
+                    <!-- Sous-bloc 3 : Uniquement l'image, sans les spécifications -->
                     <div class="ia-content-block">
                         <h4>Prédiction par un réseau de neurones</h4>
                         <div class="ia-row">
                             <figure>
-                                <!-- REMPLACEZ par votre image d'évaluation -->
                                 <img src="ia.png" alt="Évaluation de la prédiction">
                                 <figcaption>Évaluation sur le jeu de Test (Prédit vs Réel)</figcaption>
                             </figure>
-                        </div>
-                        
-                        <div class="stats-container">
-                            <div class="stats-group">
-                                <strong>Performance Précision</strong><br>
-                                MSE médiane : 0.0073<br>
-                                Comportement typique du modèle
-                            </div>
-                            <div class="stats-group">
-                                <strong>Vitesse d'exécution</strong><br>
-                                Inférence : 0.2 ms<br>
-                                Prediction quasi-instantanée
-                            </div>
-                            <div class="stats-group">
-                                <strong>Gain de temps</strong><br>
-                                Accélération : x 22 500<br>
-                                vs. FreeFEM ++ (~4.5s)
-                            </div>
                         </div>
                     </div>
 
