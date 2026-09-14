@@ -227,6 +227,43 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
+        /* --- STYLES SPECIFIQUES POUR L'ECOULEMENT HYDRO (ACCORDEON 2) --- */
+        .hydro-center-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .hydro-center-img img {
+            max-width: 100%;
+            width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .side-by-side-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+
+        .side-item {
+            flex: 1;
+            min-width: 280px;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .side-item img, 
+        .side-item video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
         /* --- STYLES SPECIFIQUES PARTIE IA --- */
         .ia-content-block {
             border: 1px solid #ccc;
@@ -266,26 +303,12 @@
             margin-top: 5px;
         }
 
-        /* Style agrandi pour l'image de la partie 2 */
         .large-img {
             max-width: 1200px !important;
             width: 100%;
         }
 
-        .prediction-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        .prediction-grid img {
-            max-width: 250px;
-            height: auto;
-        }
-
-        /* --- STYLES CARROUSEL IMOCA (Carré + Flèches) --- */
-        /* --- STYLES CARROUSEL IMOCA (Adaptatif) --- */
+        /* --- STYLES CARROUSEL IMOCA --- */
         .imoca-carousel-container {
             display: flex;
             flex-direction: column;
@@ -296,9 +319,9 @@
         .carousel-box {
             position: relative;
             width: 100%;
-            max-width: 650px; /* Largeur maximale de l'image */
-            max-height: 600px; /* Hauteur maximale pour éviter qu'elle soit trop grande */
-            background-color: #f0f2f5; /* Fond neutre si l'image ne remplit pas tout */
+            max-width: 650px;
+            max-height: 600px;
+            background-color: #f0f2f5;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
@@ -309,9 +332,9 @@
 
         .carousel-box img {
             width: 100%;
-            height: auto; /* Permet à l'image gardant son ratio de définir la hauteur */
+            height: auto;
             max-height: 600px;
-            object-fit: contain; /* Affiche l'image en entier sans la rogner */
+            object-fit: contain;
             display: none;
         }
 
@@ -416,11 +439,42 @@
                 </div>
             </details>
 
-            <!-- Accordéon 2 (FERME) -->
+            <!-- Accordéon 2 : Simulation hydrodynamique (Mis à jour) -->
             <details class="accordion-item">
                 <summary>Simulation hydrodynamique de l'écoulement autour d'un obstacle</summary>
                 <div class="accordion-content project-block">
-                    <p>Contenu à venir pour ce projet...</p>
+                    
+                    <!-- Texte d'introduction -->
+                    <p>
+                        Cette étude s'intéresse à l'analyse de l'écoulement hydrodynamique au sein d'un canal à houle équipé d'un haut-fond. L'objectif est d'observer les perturbations générées par la topographie sous-marine sur la propagation des ondes et sur la structure du champ de vitesse.
+                    </p>
+
+                    <!-- Image en dessous du texte -->
+                    <div class="hydro-center-img">
+                        <img src="image_haut_fond.jpg" alt="Canal à houle avec haut-fond">
+                        <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Visualisation du dispositif expérimental / numérique du canal à houle</p>
+                    </div>
+
+                    <!-- Élément côte à côte : Image et Vidéo -->
+                    <div class="side-by-side-container">
+                        <div class="side-item">
+                            <img src="image_obstacle.jpg" alt="Écoulement autour de l'obstacle">
+                            <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Lignes de courant autour de l'obstacle</p>
+                        </div>
+                        <div class="side-item">
+                            <video autoplay loop muted playsinline>
+                                <source src="video_obstacle.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la lecture de vidéos.
+                            </video>
+                            <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Simulation dynamique de l'écoulement</p>
+                        </div>
+                    </div>
+
+                    <!-- Texte explicatif final -->
+                    <p>
+                        L'analyse détaillée met en évidence l'apparition de tourbillons (ou structures de recirculation) formés en aval de l'obstacle. Ce phénomène de décollement de la couche limite est induit par les variations brutales de la bathymétrie, provoquant des pertes de charge locales et une redistribution importante de l'énergie cinétique dans le fluide.
+                    </p>
+
                 </div>
             </details>
 
@@ -432,7 +486,6 @@
                     <h3>Contexte</h3>
                     <p>L'objectif était d'optimiser la géométrie d'une poutre trouée encastrée soumise à la flexion, afin d'améliorer sa rigidité tout en conservant une quantité de matière constante. Une seconde partie du projet consistait à utiliser les résultats de ces optimisations pour constituer une base de données destinée à entraîner un modèle d'IA capable de prédire directement la géométrie optimale.</p>
 
-                    <!-- Sous-bloc 1 : Remplacement du placeholder par l'explication -->
                     <div class="ia-content-block">
                         <h4>Optimisation via un algorithme itératif de minimisation d'énergie</h4>
                         <div class="ia-row">
@@ -448,7 +501,6 @@
                         </div>
                     </div>
 
-                    <!-- Sous-bloc 2 : Image grossie et ajout de l'explication de validation -->
                     <div class="ia-content-block">
                         <h4>Validation numérique de l'optimisation</h4>
                         <div class="ia-row" style="flex-direction: column; text-align: center; align-items: center;">
@@ -462,7 +514,6 @@
                         </div>
                     </div>
 
-                    <!-- Sous-bloc 3 : Uniquement l'image, sans les spécifications -->
                     <div class="ia-content-block">
                         <h4>Prédiction par un réseau de neurones</h4>
                         <div class="ia-row">
@@ -491,7 +542,6 @@
                     <h3>Passion et Modélisation 3D</h3>
                     <p>Passionné par la voile et notamment par la course au large, j'ai profité de mon temps libre pour concevoir un modèle complet d'IMOCA sur Rhino3D. Ce projet personnel m'a permis de me familiariser en profondeur avec le logiciel, à la fois sur la partie conception géométrique (surfaçage, lignes de coque, appendices) et sur la partie rendu visuel.</p>
                     
-                    <!-- Carrousel d'images IMOCA en format carré avec flèches -->
                     <div class="imoca-carousel-container">
                         <div class="carousel-box" id="imocaCarousel">
                             <button class="carousel-btn carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
@@ -521,7 +571,6 @@
         function showSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
             
-            // Gestion du bouclage infini
             if (index >= slides.length) {
                 currentSlide = 0;
             } else if (index < 0) {
