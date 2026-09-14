@@ -285,6 +285,7 @@
         }
 
         /* --- STYLES CARROUSEL IMOCA (Carré + Flèches) --- */
+        /* --- STYLES CARROUSEL IMOCA (Adaptatif) --- */
         .imoca-carousel-container {
             display: flex;
             flex-direction: column;
@@ -294,9 +295,10 @@
 
         .carousel-box {
             position: relative;
-            width: 600px;
-            height: 450px; /* Format carré */
-            background-color: #000;
+            width: 100%;
+            max-width: 650px; /* Largeur maximale de l'image */
+            max-height: 600px; /* Hauteur maximale pour éviter qu'elle soit trop grande */
+            background-color: #f0f2f5; /* Fond neutre si l'image ne remplit pas tout */
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
@@ -307,8 +309,9 @@
 
         .carousel-box img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Remplit le carré harmonieusement */
+            height: auto; /* Permet à l'image gardant son ratio de définir la hauteur */
+            max-height: 600px;
+            object-fit: contain; /* Affiche l'image en entier sans la rogner */
             display: none;
         }
 
