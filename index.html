@@ -18,7 +18,7 @@
             color: #333333;
             display: flex;
             min-height: 100vh;
-            font-size: 14px; /* Réduit pour offrir une meilleure visibilité globale */
+            font-size: 14px;
         }
 
         sidebar {
@@ -158,21 +158,20 @@
             flex-wrap: wrap;
             gap: 15px;
             justify-content: center;
+            align-items: center;
         }
 
         .skill-item {
             background-color: #ffffff;
             border: 1px solid #d0daf0;
             border-radius: 12px;
-            padding: 12px;
-            width: 110px;
-            text-align: center;
+            padding: 10px 14px;
+            height: 70px; /* Hauteur fixe identique pour tous les encadrés */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.02);
             transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .skill-item:hover {
@@ -181,17 +180,10 @@
         }
 
         .skill-item img {
-            width: 45px;
-            height: 45px;
+            height: 100%; /* L'image s'ajuste à la hauteur de l'encadré */
+            width: auto;  /* La largeur s'adapte automatiquement (conserve les proportions) */
             object-fit: contain;
-            margin-bottom: 8px;
-        }
-
-        .skill-item span {
             display: block;
-            font-size: 0.8rem;
-            font-weight: bold;
-            color: #333333;
         }
 
         .accordion-item {
@@ -713,31 +705,24 @@
                     <div class="skills-grid">
                         <div class="skill-item">
                             <img src="logo_rhino.png" alt="Rhino3D">
-                            <span>Rhino3D</span>
                         </div>
                         <div class="skill-item">
                             <img src="logo_matlab.jpg" alt="Matlab">
-                            <span>Matlab</span>
                         </div>
                         <div class="skill-item">
                             <img src="logo_fluent.png" alt="Ansys Fluent">
-                            <span>Ansys Fluent</span>
                         </div>
                         <div class="skill-item">
                             <img src="logo_openfoam.png" alt="OpenFOAM">
-                            <span>OpenFOAM</span>
                         </div>
                         <div class="skill-item">
                             <img src="logo_abaqus.png" alt="Abaqus">
-                            <span>Abaqus</span>
                         </div>
                         <div class="skill-item">
                             <img src="logo_simflow.png" alt="SimFlow">
-                            <span>SimFlow</span>
                         </div>
                         <div class="skill-item">
                             <img src="logo_micro.jpg" alt="Microsoft 365">
-                            <span>Microsoft 365</span>
                         </div>
                     </div>
                 </div>
@@ -748,11 +733,9 @@
                     <div class="skills-grid">
                         <div class="skill-item">
                             <img src="logo_python.png" alt="Python">
-                            <span>Python</span>
                         </div>
                         <div class="skill-item">
                             <img src="logo_html.png" alt="HTML/CSS">
-                            <span>HTML / CSS</span>
                         </div>
                     </div>
                 </div>
