@@ -325,6 +325,14 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
+        /* Style spécifique pour augmenter la hauteur des images côte à côte de la passerelle */
+        .side-item img.passerelle-img {
+            height: 320px;
+            object-fit: contain;
+            background-color: #fcfcfc;
+            border: 1px solid #eee;
+        }
+
         /* --- STYLES IA --- */
         .ia-content-block {
             border: 1px solid #ccc;
@@ -670,20 +678,20 @@
                     <p>Le but est de dimensionner une passerelle piétonne dont les dimensions sont données ci-dessous. L'objectif principal est de déterminer les spécifications des poutres en I permettant la bonne tenue de la structure. Pour ce faire, on prend en compte les charges d'exploitation (usagers), les charges extérieures (vent, neige, etc.) ainsi qu'un coefficient de sécurité appliqué aux différents éléments de la structure.</p>
                     
                     <div class="hydro-center-img">
-                        <img src="spec_poutre.png" alt="Spécifications de la passerelle piétonne">
+                        <img src="specifications_passerelle.png" alt="Spécifications de la passerelle piétonne">
                         <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Spécifications et dimensions géométriques de la passerelle</p>
                     </div>
 
                     <h3>Démarche de dimensionnement</h3>
-                    <p>Dans un premier temps, on réalise un prédimensionnement 2D rapide pour estimer les ordres de grandeur, avant de passer à une modélisation 3D plus fine permettant d'ajuster précisément les dimensions de la structure (l'objectif étant d'obtenir une passerelle résistante mais optimisée, c'est-à-dire ni trop lourde ni trop coûteuse). Pour valider le modèle numérique, nous analysons attentivement les contraintes mécaniques et la flèche maximale sous charges.</p>
+                    <p>Dans un premier temps, on réalise un prédimensionnement 2D rapide pour estimer les ordres de grandeur, avant de passer à une modélisation 3D plus fine permettant d'ajuster précisément les dimensions de la structure (l'objectif étant d'obtenir une passerelle résistante mais optimisée, c'est-à-dire ni trop lourde ni trop coûteuse). Pour valider la robustesse et la fiabilité des résultats numériques, une analyse de convergence en maillage a été systématiquement menée. Enfin, nous avons également procédé à une étude vibratoire des modes propres afin de s'assurer de la bonne tenue dynamique de la passerelle et d'éviter tout phénomène de résonance sous l'effet des passages répétés des piétons.</p>
 
                     <div class="side-by-side-container">
                         <div class="side-item">
-                            <img src="contraintes_pont.png" alt="Contraintes dans la passerelle">
+                            <img src="contraintes_passerelle.png" alt="Contraintes dans la passerelle" class="passerelle-img">
                             <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Analyse des contraintes</p>
                         </div>
                         <div class="side-item">
-                            <img src="def_pont.png" alt="Flèche de la passerelle">
+                            <img src="fleche_passerelle.png" alt="Flèche de la passerelle" class="passerelle-img">
                             <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Analyse de la flèche (déformée)</p>
                         </div>
                     </div>
