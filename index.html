@@ -165,8 +165,8 @@
             background-color: #ffffff;
             border: 1px solid #d0daf0;
             border-radius: 12px;
-            padding: 10px 14px;
             height: 70px; /* Hauteur fixe identique pour tous les encadrés */
+            overflow: hidden; /* Empêche l'image de dépasser des bords arrondis */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -180,9 +180,9 @@
         }
 
         .skill-item img {
-            height: 100%; /* L'image s'ajuste à la hauteur de l'encadré */
-            width: auto;  /* La largeur s'adapte automatiquement (conserve les proportions) */
-            object-fit: contain;
+            height: 100%; /* L'image remplit toute la hauteur */
+            width: auto;  /* La largeur s'adapte automatiquement */
+            object-fit: cover; /* Permet au logo de prendre toute la place disponible */
             display: block;
         }
 
