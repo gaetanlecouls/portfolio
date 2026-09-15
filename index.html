@@ -2,10 +2,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85">
     <title>Gaetan Le Couls - Étudiant Ingénieur</title>
     <style>
-        /* Styles de base (inchangés) */
+        /* Styles de base */
         * {
             margin: 0;
             padding: 0;
@@ -18,6 +18,7 @@
             color: #333333;
             display: flex;
             min-height: 100vh;
+            font-size: 14px; /* Réduit pour offrir une meilleure visibilité globale */
         }
 
         sidebar {
@@ -155,7 +156,7 @@
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
         }
 
@@ -163,11 +164,15 @@
             background-color: #ffffff;
             border: 1px solid #d0daf0;
             border-radius: 12px;
-            padding: 15px;
-            width: 100px;
+            padding: 12px;
+            width: 110px;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.02);
             transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .skill-item:hover {
@@ -184,7 +189,7 @@
 
         .skill-item span {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: bold;
             color: #333333;
         }
@@ -290,7 +295,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* --- STYLES SPECIFIQUES POUR L'ECOULEMENT HYDRO (ACCORDEON 2) --- */
+        /* --- STYLES HYDRO --- */
         .hydro-center-img {
             text-align: center;
             margin: 20px 0;
@@ -328,7 +333,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* --- STYLES SPECIFIQUES PARTIE IA --- */
+        /* --- STYLES IA --- */
         .ia-content-block {
             border: 1px solid #ccc;
             border-radius: 12px;
@@ -372,7 +377,7 @@
             width: 100%;
         }
 
-        /* --- STYLES CARROUSEL IMOCA --- */
+        /* --- CARROUSEL IMOCA --- */
         .imoca-carousel-container {
             display: flex;
             flex-direction: column;
@@ -441,7 +446,7 @@
             font-weight: 600;
         }
 
-        /* --- STYLES SPECIFIQUES FORMATION --- */
+        /* --- FORMATION --- */
         .formation-card {
             background-color: #ffffff;
             border: 1px solid #d0daf0;
@@ -582,7 +587,7 @@
                 </div>
             </details>
 
-            <!-- Accordéon 2 : Simulation hydrodynamique -->
+            <!-- Accordéon 2 -->
             <details class="accordion-item">
                 <summary>Simulation hydrodynamique de l'écoulement autour d'un obstacle</summary>
                 <div class="accordion-content project-block">
@@ -617,7 +622,7 @@
                 </div>
             </details>
 
-            <!-- Accordéon 3 - OPTIMISATION DE FORME -->
+            <!-- Accordéon 3 -->
             <details class="accordion-item">
                 <summary>Optimisation de forme assisté par intelligence artificielle</summary>
                 <div class="accordion-content project-block">
@@ -674,7 +679,7 @@
                 </div>
             </details>
 
-            <!-- Accordéon 5 - CONCEPTION D'UN IMOCA -->
+            <!-- Accordéon 5 -->
             <details class="accordion-item">
                 <summary>Conception d'un IMOCA sur Rhino3D</summary>
                 <div class="accordion-content project-block">
@@ -706,16 +711,34 @@
                 <div class="skill-card">
                     <h3>Logiciels</h3>
                     <div class="skills-grid">
-                        <!-- Exemple d'élément logiciel (Répétez ou adaptez selon vos besoins) -->
                         <div class="skill-item">
                             <img src="logo_rhino.png" alt="Rhino3D">
                             <span>Rhino3D</span>
                         </div>
                         <div class="skill-item">
-                            <img src="logo_matlab.png" alt="Matlab">
+                            <img src="logo_matlab.jpg" alt="Matlab">
                             <span>Matlab</span>
                         </div>
-                        <!-- Ajoutez d'autres logiciels ici -->
+                        <div class="skill-item">
+                            <img src="logo_fluent.png" alt="Ansys Fluent">
+                            <span>Ansys Fluent</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="logo_openfoam.png" alt="OpenFOAM">
+                            <span>OpenFOAM</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="logo_abaqus.png" alt="Abaqus">
+                            <span>Abaqus</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="logo_simflow.png" alt="SimFlow">
+                            <span>SimFlow</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="logo_micro.jpg" alt="Microsoft 365">
+                            <span>Microsoft 365</span>
+                        </div>
                     </div>
                 </div>
 
@@ -723,7 +746,6 @@
                 <div class="skill-card">
                     <h3>Langages de Programmation</h3>
                     <div class="skills-grid">
-                        <!-- Exemple d'élément langage -->
                         <div class="skill-item">
                             <img src="logo_python.png" alt="Python">
                             <span>Python</span>
@@ -732,7 +754,6 @@
                             <img src="logo_html.png" alt="HTML/CSS">
                             <span>HTML / CSS</span>
                         </div>
-                        <!-- Ajoutez d'autres langages ici -->
                     </div>
                 </div>
             </div>
@@ -740,7 +761,6 @@
             <!-- SECTION FORMATION -->
             <h1 class="section-title" id="formation">Formation</h1>
 
-            <!-- Carte SeaTech -->
             <div class="formation-card">
                 <div class="formation-header">
                     <div class="formation-left">
@@ -760,7 +780,6 @@
                 </ul>
             </div>
 
-            <!-- Carte Prépa des INP -->
             <div class="formation-card">
                 <div class="formation-header">
                     <div class="formation-left">
@@ -781,7 +800,6 @@
         </div>
     </main>
 
-    <!-- Script JavaScript pour le carrousel en boucle -->
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('#imocaCarousel img');
