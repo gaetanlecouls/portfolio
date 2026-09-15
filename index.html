@@ -126,6 +126,69 @@
             margin-top: 120px;
         }
 
+        /* --- STYLES SECTION COMPETENCES --- */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background-color: #f7f9fc;
+            border: 2px solid #d0daf0;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .skill-card h3 {
+            color: #0b346e;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #e2ebf5;
+            padding-bottom: 12px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .skill-item {
+            background-color: #ffffff;
+            border: 1px solid #d0daf0;
+            border-radius: 12px;
+            padding: 15px;
+            width: 100px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+
+        .skill-item img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+
+        .skill-item span {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #333333;
+        }
+
         .accordion-item {
             background-color: #f7f9fc;
             border: 2px solid #d0daf0;
@@ -466,6 +529,7 @@
         <nav class="sidebar-nav">
             <a href="#top">Profil</a>
             <a href="#projets">Projets et Réalisations</a>
+            <a href="#competences">Compétences</a>
             <a href="#formation">Formation</a>
         </nav>
     </sidebar>
@@ -634,7 +698,46 @@
                 </div>
             </details>
 
-            <!-- SECTION FORMATION AVEC LOGOS À GAUCHE -->
+            <!-- SECTION COMPETENCES -->
+            <h1 class="section-title" id="competences">Compétences</h1>
+
+            <div class="skills-container">
+                <!-- Encadré Logiciels -->
+                <div class="skill-card">
+                    <h3>Logiciels</h3>
+                    <div class="skills-grid">
+                        <!-- Exemple d'élément logiciel (Répétez ou adaptez selon vos besoins) -->
+                        <div class="skill-item">
+                            <img src="logo_rhino.png" alt="Rhino3D">
+                            <span>Rhino3D</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="logo_matlab.png" alt="Matlab">
+                            <span>Matlab</span>
+                        </div>
+                        <!-- Ajoutez d'autres logiciels ici -->
+                    </div>
+                </div>
+
+                <!-- Encadré Langages de programmation -->
+                <div class="skill-card">
+                    <h3>Langages de Programmation</h3>
+                    <div class="skills-grid">
+                        <!-- Exemple d'élément langage -->
+                        <div class="skill-item">
+                            <img src="logo_python.png" alt="Python">
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="logo_html.png" alt="HTML/CSS">
+                            <span>HTML / CSS</span>
+                        </div>
+                        <!-- Ajoutez d'autres langages ici -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION FORMATION -->
             <h1 class="section-title" id="formation">Formation</h1>
 
             <!-- Carte SeaTech -->
