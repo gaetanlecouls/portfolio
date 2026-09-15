@@ -165,8 +165,8 @@
             background-color: #ffffff;
             border: 1px solid #d0daf0;
             border-radius: 12px;
-            height: 70px; /* Hauteur fixe identique pour tous les encadrés */
-            overflow: hidden; /* Empêche l'image de dépasser des bords arrondis */
+            height: 70px;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -180,9 +180,9 @@
         }
 
         .skill-item img {
-            height: 100%; /* L'image remplit toute la hauteur */
-            width: auto;  /* La largeur s'adapte automatiquement */
-            object-fit: cover; /* Permet au logo de prendre toute la place disponible */
+            height: 100%;
+            width: auto;
+            object-fit: cover;
             display: block;
         }
 
@@ -515,7 +515,6 @@
         .formation-list li {
             margin-bottom: 8px;
         }
-
     </style>
 </head>
 <body>
@@ -667,7 +666,27 @@
             <details class="accordion-item">
                 <summary>Etude mécanique et dimensionnement d’une passerelle piétonne</summary>
                 <div class="accordion-content project-block">
-                    <p>Contenu à venir pour ce projet...</p>
+                    <h3>Contexte</h3>
+                    <p>Le but est de dimensionner une passerelle piétonne dont les dimensions sont données ci-dessous. L'objectif principal est de déterminer les spécifications des poutres en I permettant la bonne tenue de la structure. Pour ce faire, on prend en compte les charges d'exploitation (usagers), les charges extérieures (vent, neige, etc.) ainsi qu'un coefficient de sécurité appliqué aux différents éléments de la structure.</p>
+                    
+                    <div class="hydro-center-img">
+                        <img src="spec_poutre.png" alt="Spécifications de la passerelle piétonne">
+                        <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Spécifications et dimensions géométriques de la passerelle</p>
+                    </div>
+
+                    <h3>Démarche de dimensionnement</h3>
+                    <p>Dans un premier temps, on réalise un prédimensionnement 2D rapide pour estimer les ordres de grandeur, avant de passer à une modélisation 3D plus fine permettant d'ajuster précisément les dimensions de la structure (l'objectif étant d'obtenir une passerelle résistante mais optimisée, c'est-à-dire ni trop lourde ni trop coûteuse). Pour valider le modèle numérique, nous analysons attentivement les contraintes mécaniques et la flèche maximale sous charges.</p>
+
+                    <div class="side-by-side-container">
+                        <div class="side-item">
+                            <img src="contraintes_pont.png" alt="Contraintes dans la passerelle">
+                            <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Analyse des contraintes</p>
+                        </div>
+                        <div class="side-item">
+                            <img src="def_pont.png" alt="Flèche de la passerelle">
+                            <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Analyse de la flèche (déformée)</p>
+                        </div>
+                    </div>
                 </div>
             </details>
 
@@ -814,9 +833,9 @@
             slides[currentSlide].classList.add('active');
             counter.textContent = `Image ${currentSlide + 1} / ${slides.length}`;
         }
-
-        function moveSlide(direction) {
-            showSlide(currentSlide + direction);
+        
+        function moveSlide(n) {
+            showSlide(currentSlide + n);
         }
     </script>
 </body>
