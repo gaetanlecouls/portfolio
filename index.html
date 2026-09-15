@@ -378,7 +378,7 @@
             font-weight: 600;
         }
 
-        /* --- STYLES SPECIFIQUES FORMATION (Modèle type modèle fourni) --- */
+        /* --- STYLES SPECIFIQUES FORMATION --- */
         .formation-card {
             background-color: #ffffff;
             border: 1px solid #d0daf0;
@@ -386,7 +386,6 @@
             padding: 25px 30px;
             margin-bottom: 25px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            position: relative;
         }
 
         .formation-header {
@@ -394,6 +393,19 @@
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 15px;
+        }
+
+        .formation-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .formation-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 6px;
         }
 
         .formation-title-group h3 {
@@ -423,6 +435,7 @@
             font-weight: bold;
             font-size: 1rem;
             text-align: right;
+            white-space: nowrap;
         }
 
         .formation-list {
@@ -614,14 +627,18 @@
                 </div>
             </details>
 
-            <!-- NOUVELLE SECTION FORMATION -->
+            <!-- SECTION FORMATION AVEC LOGOS À GAUCHE -->
             <h1 class="section-title" id="formation">Formation</h1>
 
+            <!-- Carte SeaTech -->
             <div class="formation-card">
                 <div class="formation-header">
-                    <div class="formation-title-group">
-                        <div class="formation-location">SEATECH — TOULON, FRANCE</div>
-                        <div class="formation-diploma">École d'ingénieurs[cite: 1]</div>
+                    <div class="formation-left">
+                        <img src="logo_seatech.png" alt="Logo SeaTech" class="formation-logo">
+                        <div class="formation-title-group">
+                            <div class="formation-location">SEATECH — TOULON, FRANCE</div>
+                            <div class="formation-diploma">École d'ingénieurs[cite: 1]</div>
+                        </div>
                     </div>
                     <div class="formation-dates">2024 - Présent</div>
                 </div>
@@ -633,11 +650,15 @@
                 </ul>
             </div>
 
+            <!-- Carte Prépa des INP -->
             <div class="formation-card">
                 <div class="formation-header">
-                    <div class="formation-title-group">
-                        <div class="formation-location">LA PRÉPA DES INP — BORDEAUX, FRANCE</div>
-                        <div class="formation-diploma">Classe Préparatoire Intégrée[cite: 1]</div>
+                    <div class="formation-left">
+                        <img src="logo_inp.png" alt="Logo La Prépa des INP" class="formation-logo">
+                        <div class="formation-title-group">
+                            <div class="formation-location">LA PRÉPA DES INP — BORDEAUX, FRANCE</div>
+                            <div class="formation-diploma">Classe Préparatoire Intégrée[cite: 1]</div>
+                        </div>
                     </div>
                     <div class="formation-dates">2022 - 2024</div>
                 </div>
