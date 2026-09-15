@@ -39,6 +39,8 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
+            flex-grow: 1;
+            justify-content: space-around; /* Répartition équitable pour l'espacement symétrique haut/bas */
         }
         /* Photo de profil circulaire */
         .profile-pic-container {
@@ -48,7 +50,6 @@
             overflow: hidden;
             border: 3px solid rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            margin-bottom: 25px;
         }
         .profile-pic-container img {
             width: 100%;
@@ -60,7 +61,6 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            margin-top: 10px;
         }
         .sidebar-nav a {
             color: white;
@@ -75,7 +75,7 @@
         .sidebar-nav a:hover {
             opacity: 0.8;
         }
-        /* Espacement des liens de la sidebar */
+        /* Espacement entre les titres inchangé */
         .sidebar-nav a:nth-child(1) {
             margin-bottom: 30px;
         }
