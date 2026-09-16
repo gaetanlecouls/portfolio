@@ -230,6 +230,34 @@
             object-fit: cover;
             display: block;
         }
+        /* Styles spécifiques pour les blocs de compétences textuelles */
+        .skills-text-card {
+            grid-column: 1 / -1; /* S'étale sur toute la largeur de la grille */
+        }
+        .skills-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .skills-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 14px;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+        .skills-list li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: #0b346e;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+        .skills-list strong {
+            color: #0b346e;
+        }
+
         .accordion-item {
             background-color: #f7f9fc;
             border: 2px solid #d0daf0;
@@ -595,7 +623,7 @@
                     <div class="side-by-side-container">
                         <div class="side-item">
                             <img src="airy.png" alt="Écoulement autour de l'obstacle">
-                            <p style="font-size: 0.9rem; color: #555; margin-top: 5px;"></p>
+                            <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Lignes de courant autour de l'obstacle</p>
                         </div>
                         <div class="side-item">
                             <video autoplay loop muted playsinline>
@@ -636,6 +664,7 @@
                         <div class="ia-row" style="flex-direction: column; text-align: center; align-items: center;">
                             <figure style="width: 100%;">
                                 <img src="poutre.png" alt="Contraintes poutre optimisée" class="large-img" style="width: 100%; max-width: 1200px; height: auto;">
+                                <figcaption>Contraintes de Von-Mises dans la poutre optimisée</figcaption>
                             </figure>
                             <p style="margin-top: 15px; max-width: 850px; text-align: justify; line-height: 1.5;">
                                 La validation numérique confirme une meilleure résistance de la structure optimisée, avec notamment une flèche diminuée de 40% par rapport à la poutre initiale.
@@ -647,6 +676,7 @@
                         <div class="ia-row">
                             <figure>
                                 <img src="ia.png" alt="Évaluation de la prédiction">
+                                <figcaption>Évaluation sur le jeu de Test (Prédit vs Réel)</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -661,7 +691,7 @@
                     
                     <div class="hydro-center-img">
                         <img src="spec_poutre.png" alt="Spécifications de la passerelle piétonne">
-                        <p style="font-size: 0.9rem; color: #555; margin-top: 5px;"></p>
+                        <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Spécifications et dimensions géométriques de la passerelle</p>
                     </div>
                     <h3>Démarche de dimensionnement</h3>
                     <p>Dans un premier temps, on réalise un prédimensionnement 2D rapide pour estimer les ordres de grandeur, avant de passer à une modélisation 3D plus fine permettant d'ajuster précisément les dimensions de la structure (l'objectif étant d'obtenir une passerelle résistante mais optimisée, c'est-à-dire ni trop lourde ni trop coûteuse). Pour valider la robustesse et la fiabilité des résultats numériques, une analyse de convergence en maillage a été systématiquement menée. Enfin, nous avons également procédé à une étude vibratoire des modes propres afin de s'assurer de la bonne tenue dynamique de la passerelle et d'éviter tout phénomène de résonance.</p>
@@ -703,6 +733,19 @@
             <!-- SECTION COMPETENCES -->
             <h1 class="section-title" id="competences">Compétences</h1>
             <div class="skills-container">
+                <!-- Carte Compétences Métier / Domaines d'expertise -->
+                <div class="skill-card skills-text-card">
+                    <h3>Domaines d'Expertise & Domaines de Modélisation</h3>
+                    <ul class="skills-list">
+                        <li><strong>Modélisation et Calculs :</strong> Spécialisé en modélisation avancée et dimensionnement multiphysique pour l'ingénierie.</li>
+                        <li><strong>Mécanique des Fluides :</strong> Résolution de problèmes d'écoulements visqueux ou non, compressibles ou incompressibles, incluant les écoulements diphasiques et en milieux poreux.</li>
+                        <li><strong>Hydrodynamique & Océanographie :</strong> Modélisation des écoulements hydrodynamiques (houle) et des interactions fluide-structure (IFS).</li>
+                        <li><strong>Mécanique des Solides :</strong> Analyse de la tenue à la charge, comportement sous impact et résistance à la fatigue des structures.</li>
+                        <li><strong>Thermique & Énergétique :</strong> Traitement des problématiques thermiques, réalisation de bilans d'énergie et transferts de puissance.</li>
+                        <li><strong>Architecture Navale :</strong> Conception géométrique numérique (notamment sur Rhino) et réalisation de calculs de stabilité navale.</li>
+                        <li><strong>Méthodes Numériques & Implémentation :</strong> Mise en œuvre et développement de solveurs numériques (Éléments Finis, Différences Finies, Volumes Finis) en Python ainsi que l'utilisation de logiciels intégrant déjà des solveurs spécialisés.</li>
+                    </ul>
+                </div>
                 <!-- Encadré Logiciels -->
                 <div class="skill-card">
                     <h3>Logiciels</h3>
