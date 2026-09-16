@@ -207,11 +207,17 @@
             justify-content: center;
             align-items: center;
         }
+        .skill-container-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         .skill-item {
             background-color: #ffffff;
             border: 1px solid #d0daf0;
             border-radius: 12px;
             height: 70px;
+            width: 85px;
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -219,7 +225,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.02);
             transition: transform 0.2s, box-shadow 0.2s;
         }
-        .skill-item:hover {
+        .skill-container-item:hover .skill-item {
             transform: translateY(-3px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.08);
         }
@@ -228,6 +234,13 @@
             width: auto;
             object-fit: cover;
             display: block;
+        }
+        .skill-name {
+            margin-top: 5px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #333333;
+            text-align: center;
         }
         /* Styles spécifiques pour les blocs de compétences textuelles */
         .skills-text-card {
@@ -749,29 +762,53 @@
                 <div class="skill-card">
                     <h3>Logiciels</h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
-                            <img src="logo_rhino.png" alt="Rhino3D">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_rhino.png" alt="Rhino3D">
+                            </div>
+                            <span class="skill-name">Rhino3D</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="logo_matlab.jpg" alt="Matlab">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_matlab.jpg" alt="Matlab">
+                            </div>
+                            <span class="skill-name">Matlab</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="logo_fluent.png" alt="Ansys Fluent">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_fluent.png" alt="Ansys Fluent">
+                            </div>
+                            <span class="skill-name">Ansys Fluent</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="logo_openfoam.png" alt="OpenFOAM">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_openfoam.png" alt="OpenFOAM">
+                            </div>
+                            <span class="skill-name">OpenFOAM</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="logo_abaqus.png" alt="Abaqus">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_abaqus.png" alt="Abaqus">
+                            </div>
+                            <span class="skill-name">Abaqus</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="logo_simflow.png" alt="SimFlow">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_simflow.png" alt="SimFlow">
+                            </div>
+                            <span class="skill-name">SimFlow</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="logo_micro.jpg" alt="Microsoft 365">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_micro.jpg" alt="Microsoft 365">
+                            </div>
+                            <span class="skill-name">Microsoft 365</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="logo_ff.jpg" alt="FreeFem">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_ff.jpg" alt="FreeFem">
+                            </div>
+                            <span class="skill-name">FreeFem</span>
                         </div>
                     </div>
                 </div>
@@ -779,20 +816,35 @@
                 <div class="skill-card">
                     <h3>Langages de Programmation</h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
-                            <img src="logo_python.png" alt="Python">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_python.png" alt="Python">
+                            </div>
+                            <span class="skill-name">Python</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="logo_html.jpg" alt="HTML/CSS">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_html.jpg" alt="HTML/CSS">
+                            </div>
+                            <span class="skill-name">HTML/CSS</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="logo_cpp.jpg" alt="Cpp">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_cpp.jpg" alt="Cpp">
+                            </div>
+                            <span class="skill-name">C++</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="logo_fortran.png" alt="Fortran">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_fortran.png" alt="Fortran">
+                            </div>
+                            <span class="skill-name">Fortran</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="logo_sql.jpg" alt="SQL">
+                        <div class="skill-container-item">
+                            <div class="skill-item">
+                                <img src="logo_sql.jpg" alt="SQL">
+                            </div>
+                            <span class="skill-name">SQL</span>
                         </div>
                     </div>
                 </div>
